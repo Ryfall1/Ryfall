@@ -13,6 +13,7 @@
             <h1>Ryfall</h1>
         </div>
         <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
             <li><a href="#about-me">Tentang Saya</a></li>
             <li><a href="#guitar-collection">Koleksi Gitar</a></li>
         </ul>
@@ -24,7 +25,7 @@
     </nav>
 
     <!-- Header -->
-    <header>
+    <header id="home">
         <div class="header-content">
             <img src="★ _ _ Kaoruko Waguri.jpeg" alt="Foto Profil" class="profile-pic">
             <h1 class="gradient-text">Muhammad Rifaldo</h1>
@@ -78,16 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const navLinks = document.querySelector('.nav-links');
 
     hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active'); // Toggle kelas active
         navLinks.classList.toggle('open');
     });
 
-    // Menutup menu saat tautan di dalam menu diklik
     navLinks.addEventListener('click', (e) => {
         if (e.target.tagName === 'A') {
             navLinks.classList.remove('open');
+            hamburger.classList.remove('active'); // Tutup animasi hamburger
         }
     });
 });
+
 
     </script>
 </body>
