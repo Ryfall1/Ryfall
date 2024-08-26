@@ -1,0 +1,283 @@
+/* General Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #f0f0f0;
+    background-color: #101010;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* Navigation Menu */
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: #0a3d62;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan ke menu */
+}
+
+.logo h1 {
+    margin: 0;
+    color: #f0f0f0;
+    font-size: 1.8em;
+    letter-spacing: 2px; /* Memberikan spasi antar huruf */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px; /* Jarak yang lebih besar antara link */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0;
+}
+
+.nav-links a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-size: 1.2em;
+    padding: 8px 16px;
+    transition: color 0.3s, background-color 0.3s; /* Tambahkan transisi warna dan latar belakang */
+}
+
+.nav-links a:hover {
+    color: #0fbcf9;
+    background-color: rgba(255, 255, 255, 0.1); /* Warna latar belakang saat di-hover */
+    border-radius: 5px; /* Tambahkan border-radius untuk efek rounded */
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: relative;
+    z-index: 1100; /* Pastikan hamburger berada di atas menu yang terbuka */
+}
+
+.hamburger span {
+    height: 3px;
+    width: 25px;
+    background: #f0f0f0;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    transition: all 0.3s; /* Tambahkan transisi pada semua properti */
+}
+
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg);
+    top: 8px; /* Posisikan span pertama */
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Sembunyikan span tengah */
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg);
+    top: -8px; /* Posisikan span terakhir */
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #0a3d62;
+        width: 100%;
+        height: calc(100vh - 60px);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        overflow-y: auto;
+        text-align: center; /* Teks menu di tengah pada tampilan mobile */
+    }
+
+    .nav-links.open {
+        transform: translateX(0);
+    }
+
+    .hamburger {
+        display: flex;
+    }
+}
+
+/* Header */
+header {
+    position: relative;
+    background: linear-gradient(135deg, #0a3d62, #1e272e);
+    color: #f0f0f0;
+    text-align: center;
+    padding: 40px 20px; /* Kurangi padding */
+    min-height: 100vh; /* Pastikan header memenuhi satu halaman penuh */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-pic {
+    width: 120px; /* Kurangi ukuran gambar profil */
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #0fbcf9;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+
+.header-content h1 {
+    margin: 0;
+    font-size: 2.5em; /* Kurangi ukuran font */
+}
+
+.header-content p {
+    margin: 10px 0;
+    font-size: 1.1em; /* Kurangi ukuran font */
+}
+
+.ig-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0fbcf9;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.ig-link:hover {
+    background-color: #38ada9;
+    transform: scale(1.05);
+}
+
+/* Gradient Text Effect */
+.gradient-text {
+    background: linear-gradient(45deg, #0fbcf9, #38ada9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Background Animation */
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('background.jpg') repeat;
+    opacity: 0.1;
+    z-index: 0;
+    animation: moveBackground 30s linear infinite;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
+}
+
+/* About Me Section */
+#about-me {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #1e272e;
+}
+
+#about-me h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.about-images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.about-images img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Guitar Collection Section */
+#guitar-collection {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #0a3d62;
+}
+
+#guitar-collection h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.guitar-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.guitar-item {
+    margin: 15px;
+    background-color: #1e272e;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.guitar-item img {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.guitar-item h3 {
+    margin-top: 15px;
+}
+
+.guitar-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: #0a3d62;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 20px 0;
+}

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Saya</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="logo">
+            <h1>Ryfall</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-me">Tentang Saya</a></li>
+            <li><a href="#guitar-collection">Koleksi Gitar</a></li>
+        </ul>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header id="home">
+        <div class="header-content">
+            <img src="★ _ _ Kaoruko Waguri.jpeg" alt="Foto Profil" class="profile-pic">
+            <h1 class="gradient-text">Muhammad Rifaldo</h1>
+            <p>Musisi & Penggemar Gitar</p>
+            <a href="https://www.instagram.com/ryfall2?igsh=MTJsY2ZrOHA4eHBlbw==" target="_blank" class="ig-link">Ikuti Saya di Instagram</a>
+        </div>
+        <div class="background-animation"></div>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about-me">
+        <h2>Tentang Saya</h2>
+        <p>Saya adalah seorang musisi yang mencintai gitar dan berbagai jenis musik...</p>
+        <div class="about-images">
+            <img src="playing.jpg" alt="Bermain Gitar">
+            <img src="chord.jpg" alt="Perjalanan Musik">
+        </div>
+    </section>
+
+    <!-- Guitar Collection Section -->
+    <section id="guitar-collection">
+        <h2>Koleksi Gitar Saya</h2>
+        <div class="guitar-gallery">
+            <div class="guitar-item">
+                <img src="mandalika gitar.png" alt="Gitar 1">
+                <h3>Gitar Akustik</h3>
+                <p>GITAR Akustik Mandalika De Ticco Series DTS-01TY-NT-KP</p>
+            </div>
+            <div class="guitar-item">
+                <img src="semoga.png" alt="Gitar 2">
+                <h3>Gitar Elektrik</h3>
+                <p></p>
+            </div>
+            <div class="guitar-item">
+                <img src="semoga.png" alt="Gitar 3">
+                <h3>Gitar Klasik</h3>
+                <p></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ryfall. Semua Hak Cipta Dilindungi.</p>
+    </footer>
+
+    <!-- JavaScript for Responsive Menu -->
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active'); // Toggle kelas active
+        navLinks.classList.toggle('open');
+    });
+
+    navLinks.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+            navLinks.classList.remove('open');
+            hamburger.classList.remove('active'); // Tutup animasi hamburger
+        }
+    });
+});
+
+
+    </script>
+</body>
+</html>
